@@ -1,28 +1,21 @@
 # HTTP-Post-Exercise
-This exercise is part of The Advanced Programming Techniques class. 
-This is a simple Python application that allows you to publish MQTT messages via an HTTP POST request using the Flask web framework.
+WITH DOCKER CONTAINER
 
-Before you can run this application, you'll need to install the following:
-Python 3.x
-Flask
-paho-mqtt
+This is a simple Python application that allows you to publish messages to an MQTT broker using an HTTP POST request. The application runs in a Docker container.
 
-You can install Flask and paho-mqtt using pip:
+Before you can run this application, you'll need to have the Docker installed on your system.
 
-pip install Flask paho-mqtt
+To install the application, follow these steps:
 
-You'll also need to have a running MQTT broker to publish messages to. I recommend using the Mosquitto broker, which you can download and install from the official website.
+Clone this repository to your local machine using the command:
+git clone https://github.com/anthimat11/HTTP-Post-Exercise
 
-To use this application, follow these steps:
+Change into the project directory.
 
-Start the Mosquitto broker in a terminal window:
-mosquitto
+Build the Docker image using the following command:
+docker build -t mqtt-message-publisher .
 
-In a new terminal window, start the Flask app by running the following command from the directory containing the app.py file:
-python app.py
+Once the image is built, start the Docker container using the following command:
+docker run -p 5000:5000 mqtt-message-publisher
 
-In a third terminal window, use the curl command to send an HTTP POST request to the Flask app:
-curl --data "message=Hello MQTT!" http://localhost:5000/publish
-
-
-If everything is set up correctly, you should see the message you sent printed to the console in the terminal window where you started the Flask app.
+You should now be able to access the application by navigating to http://localhost:5000 in your web browser.
