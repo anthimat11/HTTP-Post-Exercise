@@ -2,15 +2,15 @@
 This exercise is part of The Advanced Programming Techniques class. 
 This is a simple Python application that allows you to publish MQTT messages via an HTTP POST request using the Flask web framework.
 
-Prerequisites
 Before you can run this application, you'll need to install the following:
-
 Python 3.x
 Flask
 paho-mqtt
+
 You can install Flask and paho-mqtt using pip:
 
 pip install Flask paho-mqtt
+
 You'll also need to have a running MQTT broker to publish messages to. I recommend using the Mosquitto broker, which you can download and install from the official website.
 
 To use this application, follow these steps:
